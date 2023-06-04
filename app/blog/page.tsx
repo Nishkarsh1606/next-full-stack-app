@@ -21,7 +21,7 @@ const BlogPage = async () => {
         <div>
             {
                 posts.map((post: any) => (
-                    <Link href={`/blog/${post.id}`}>
+                    <Link href={`/blog/${post.id}`} key={post.id}>
                         <div className='flex flex-col  md:flex-row justify-between mb-6'>
                             <div className='min-w-[33%] min-h-[250px] md:min-w-[500px] md:min-h-[250px] relative'>
                                 <Image src={imageURL} fill={true} alt='' className='object-cover' />

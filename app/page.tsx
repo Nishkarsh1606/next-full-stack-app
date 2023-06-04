@@ -10,7 +10,7 @@ export default function HomePage() {
         <h2 className='text-2xl mb-6'>Turning your idea into Reality. We bring together the teams from the global tech industry.</h2>
         <Button title='Contact Us' url='/contact' />
       </div>
-      <Image src='/hero.png' width={400} alt='hero image' className={styles.img}/>
+      <Image src='/hero.png' width={400} height={200} alt='hero image' className={styles.img}/>
     </main>
   )
 }

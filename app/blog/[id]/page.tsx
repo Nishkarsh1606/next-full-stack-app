@@ -64,7 +64,7 @@ const BlogPage = async ({ params: { id } }: BlogPostProps) => {
                     </div>
                 </div>
                 <div>
-                    <Image src={imageURL} width={400} alt="" />
+                    <Image src={imageURL} width={400} height={20} alt="" />
                 </div>
             </section>
             <section className="mt-12">

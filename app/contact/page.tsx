@@ -16,10 +16,10 @@ const ContactPage = () => {
     return (
         <div>
             <p className='text-center text-6xl font-bold mb-[60px]'>
-                Let's keep in touch
+                {`Let's keep in touch`}
             </p>
             <div className='flex justify-around'>
-                <Image src={'/contact.png'} alt='contact us iamge' width={400} className='hidden md:block' />
+                <Image src={'/contact.png'} alt='contact us iamge' width={400} height={200} className='hidden md:block' />
                 <form className='flex flex-col min-w-[50%]' onSubmit={handleFormSubmit}>
                     <input type="text" placeholder='Enter your full name' value={name} onChange={e => setName(e.target.value)} className='border-2 mb-2 rounded-md outline-none p-1' />
                     <input type="email" placeholder='Email id' value={email} onChange={e => setEmail(e.target.value)} className='border-2 mb-2 rounded-md outline-none p-1' />
