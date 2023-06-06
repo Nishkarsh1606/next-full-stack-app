@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Button from "../components/Button"
+import Button from "../../components/Button"
 
 const AboutPage = () => {
     const imageURL = `https://images.pexels.com/photos/3194521/pexels-photo-3194521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`

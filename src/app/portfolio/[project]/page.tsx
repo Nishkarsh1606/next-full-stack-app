@@ -1,4 +1,4 @@
-import Button from '@/app/components/Button'
+import Button from '@/src/components/Button'
 import Image from 'next/image'
 import items from './data'
 import { notFound } from 'next/navigation';
@@ -20,9 +20,9 @@ const ProjectPage = ({ params: { project } }: { params: { project: string } }) =
             {
                 data.map((item: any, index: number) => (
                     <div key={item.id}>
-                        <p className='text-xl font-bold'>{item.title}</p>
+                        <p className={`text-xl font-bold ${index % 2 === 0 && 'text-right'} mb-3`}>{item.title}</p>
                         <div className='min-h-[60vh]'>
-                            <div className={`flex justify-between mb-6 ${index % 2 === 0 && 'flex-row-reverse'}`}>
+                            <div className={`flex justify-between mb-6 ${index % 2 !== 0 && 'flex-row-reverse'}`}>
                                 <div className='flex flex-col justify-center max-w-[50%]'>
                                     <h1 className='text-3xl mb-3 font-bold'>Title</h1>
                                     <p className='mb-3'>{item.desc}</p>

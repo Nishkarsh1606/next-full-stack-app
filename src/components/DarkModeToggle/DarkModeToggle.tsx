@@ -1,6 +1,6 @@
 'use client'
 import React, { useContext, useState } from 'react'
-import { ThemeContext } from '@/context/ThemeContext'
+import { ThemeContext } from '@/src/context/ThemeContext'
 import Switch from '@mui/material/Switch';
 
 const DarkModeToggle = () => {
