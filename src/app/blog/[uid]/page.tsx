@@ -1,14 +1,13 @@
 import Image from "next/image"
-import AvatarIcon from "@/src/components/AvatarIcon"
 
 type BlogPostProps = {
     params: {
-        id: string
+        uid: string
     }
 }
 
-const getIndividualPostData = async (id: string) => {
-    const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
+const getIndividualPostData = async (uid: any) => {
+    const res = await fetch(`http://localhost:3000/api/posts/${uid}`, {
         cache: "no-store"
     })
     if (!res.ok) {
@@ -17,9 +16,18 @@ const getIndividualPostData = async (id: string) => {
     return res.json()
 }
 
+export async function generateMetadata({ params: { uid } }: any) {
+    const data = await getIndividualPostData(uid)
+    return {
+        title: data.title,
+        description: data.summary
+    }
+}
 
-const BlogPage = async ({ params: { id } }: BlogPostProps) => {
-    const post = await getIndividualPostData(id)
+
+const BlogPage = async ({ params: { uid } }: BlogPostProps) => {
+    const post = await getIndividualPostData(uid)
+    console.log(post)
     const imageURL = post.image
     return (
         <div className="my-12">

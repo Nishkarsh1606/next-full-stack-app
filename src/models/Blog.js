@@ -22,9 +22,12 @@ const PostSchema = new Schema({
     author: {
         type: String,
         required: true,
+    },
+    uid: {
+        type: String,
+        required: true,
+        unique: true
     }
 }, { timestamps: true });
 
-// { timestamps: true }
-
-export default mongoose.models.Post || mongoose.model('Posts', PostSchema)
+export default mongoose.models.Blogs || mongoose.model('Blogs', PostSchema)
