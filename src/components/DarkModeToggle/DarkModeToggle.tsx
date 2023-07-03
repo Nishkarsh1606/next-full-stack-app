@@ -5,7 +5,7 @@ import Switch from '@mui/material/Switch';
 
 const DarkModeToggle = () => {
     const { toggle } = useContext(ThemeContext)
-    const [checked, setChecked] = useState<boolean>(false);
+    const [checked, setChecked] = useState<boolean>(true);
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         toggle()
         setChecked(event.target.checked);
