@@ -33,12 +33,11 @@ const BlogPage = async () => {
                         <div className='flex flex-col md:flex-row justify-center mb-6'>
                             <div className='min-w-[33%] min-h-[250px] md:min-w-[500px] md:min-h-[250px] relative'>
                                 <Image src={imageURL} fill={true} alt='' className='object-cover' />
-                                {/* <Image src={imageURL} width={500} height={20} alt='' /> */}
                             </div>
                             <div className='flex flex-col justify-center ml-6 text-left'>
-                                <p className='mb-6 font-bold text-3xl'>{post.title}</p>
+                                <p className='mb-6 font-bold text-3xl'>{post.data.title}</p>
                                 <p className='text-slate-600'>
-                                    {post.summary}
+                                    {post.data.summary}
                                 </p>
                             </div>
                         </div>

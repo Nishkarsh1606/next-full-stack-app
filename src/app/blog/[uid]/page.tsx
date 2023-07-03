@@ -6,7 +6,7 @@ type BlogPostProps = {
     }
 }
 
-const getIndividualPostData = async (uid: any) => {
+const getIndividualPostData = async (uid: string) => {
     const res = await fetch(`http://localhost:3000/api/posts/${uid}`, {
         cache: "no-store"
     })

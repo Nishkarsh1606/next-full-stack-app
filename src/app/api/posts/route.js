@@ -1,13 +1,21 @@
 import { NextResponse } from "next/server";
-import Blog from '@/src/models/Blog'
-import connect from '@/src/utils/db'
+import { collection, getDocs } from "firebase/firestore";
+import { db } from '@/firebase'
+
 
 export async function GET(request) {
     try {
-        await connect()
-        const blogPosts = await Blog.find()
-        return NextResponse.json(blogPosts, { status: 200 })
-    } catch (e) {
-        throw new Error(e)
+        const coll = collection(db, 'blogs')
+        const querySnapShot = await getDocs(coll)
+        const posts = []
+        querySnapShot.forEach((doc) => {
+            posts.push({
+                uid: doc.id,
+                data: doc.data()
+            })
+        })
+        return NextResponse.json(posts, { status: 200 })
+    } catch (err) {
+        throw new Error(err)
     }
 }
