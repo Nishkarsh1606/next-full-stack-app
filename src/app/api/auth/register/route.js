@@ -10,7 +10,7 @@ export async function POST(request) {
     const newUser = new User({
         name,
         email,
-        passwordo
+        password
     })
     try {
         await newUser.save()

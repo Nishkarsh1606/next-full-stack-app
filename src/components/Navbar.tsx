@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import DarkModeToggle from './DarkModeToggle/DarkModeToggle'
+import LogoutBtn from './LogoutBtn'
 
 const Navbar = () => {
     const links = [
@@ -37,7 +38,7 @@ const Navbar = () => {
                     <h1 className='text-3xl font-bold'>Full App</h1>
                 </Link>
             </div>
-            <div className='hidden md:flex gap-x-5'>
+            <div className='hidden md:flex gap-x-5 items-center'>
                 <DarkModeToggle />
                 {
                     links.map((link) => (
@@ -46,6 +47,7 @@ const Navbar = () => {
                         </li>
                     ))
                 }
+            <LogoutBtn/>
             </div>
         </nav>
     )
