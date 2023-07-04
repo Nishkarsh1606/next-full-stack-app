@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import styles from './blog.module.css'
 import Link from 'next/link'
+import BlogPostCard from '@/src/components/BlogPostCard'
 
 
-export const metadata={
+export const metadata = {
     title: 'Blogs Page',
     description: 'Here you will find the best blogs regarding Next.js version 13'
 }
@@ -30,17 +31,7 @@ const BlogPage = async () => {
             {
                 posts.map((post: any) => (
                     <Link href={`/blog/${post.uid}`} key={post.uid}>
-                        <div className='flex flex-col md:flex-row justify-center mb-6'>
-                            <div className='min-w-[33%] min-h-[250px] md:min-w-[500px] md:min-h-[250px] relative'>
-                                <Image src={imageURL} fill={true} alt='' className='object-cover' />
-                            </div>
-                            <div className='flex flex-col justify-center ml-6 text-left'>
-                                <p className='mb-6 font-bold text-3xl'>{post.data.title}</p>
-                                <p className='text-slate-600'>
-                                    {post.data.summary}
-                                </p>
-                            </div>
-                        </div>
+                        <BlogPostCard imgURL={imageURL} summary={post.data.summary} title={post.data.title} />
                     </Link>
                 ))
             }
