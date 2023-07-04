@@ -1,21 +1,24 @@
 'use client'
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp, setDoc, doc } from "firebase/firestore";
 import { db } from "@/firebase";
 import { useRef } from "react";
+import { v4 as uuidv4 } from 'uuid';
+
 
 const PostContent = () => {
     const formRef: React.RefObject<HTMLFormElement> = useRef(null)
     const postContentToDB = async (e: any) => {
         e.preventDefault()
         const pattern = /\s/g
-        const urlTitle = e.target[1].value.replace(pattern, '-')
-        const blogRef = await addDoc(collection(db, "blogs"), {
+        const urlTitle = `${e.target[1].value.replace(pattern, '-')}-${uuidv4().slice(0, 5)}`
+        await setDoc(doc(db, "blogs", urlTitle.toLowerCase()), {
             author: e.target[0].value,
             title: e.target[1].value,
             summary: e.target[2].value,
             content: e.target[3].value,
             imageURL: e.target[4].value || null,
-            urlTitle
+            urlTitle,
+            timestamp: serverTimestamp()
         }).then(() => {
             alert('Post added successfully')
             // @ts-ignore

@@ -1,10 +1,8 @@
 'use client'
-import { signIn, useSession } from 'next-auth/react'
 import Image from 'next/image'
+import { signIn, useSession } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import { FormEvent, useState } from 'react'
-import { doc, getDoc } from "firebase/firestore";
-import { db } from '@/firebase'
 
 const LoginPage = () => {
   const session = useSession()
