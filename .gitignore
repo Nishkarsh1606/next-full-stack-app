@@ -33,3 +33,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Misc 
+todo.md
+next-full-stack-app-001-firebase-adminsdk-meowi-67f4dd7745.json
