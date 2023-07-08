@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import styles from './blog.module.css'
 import Link from 'next/link'
 import BlogPostCard from '@/src/components/BlogPostCard'
 
@@ -12,7 +10,7 @@ export const metadata = {
 const getData = async () => {
     const res = await fetch(`http://localhost:3000/api/posts`, {
         next: {
-            revalidate: 60 * 60 * 24
+            revalidate: 60*60*24
         }
     })
     if (!res.ok) {
