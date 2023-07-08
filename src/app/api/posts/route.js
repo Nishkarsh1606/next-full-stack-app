@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { collection, query, getDocs, orderBy, onSnapshot } from "firebase/firestore";
-import { db } from '@/firebase'
+import { db } from '../../../../firebase'
 
 
 export async function GET(request) {
