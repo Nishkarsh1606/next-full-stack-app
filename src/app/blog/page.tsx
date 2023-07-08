@@ -8,9 +8,9 @@ export const metadata = {
 }
 
 const getData = async () => {
-    const res = await fetch(`http://localhost:3000/api/posts`, {
+    const res = await fetch(`https://ultimate-next-full-stack-app.vercel.app/api/posts`, {
         next: {
-            revalidate: 60*60*24
+            revalidate: 60 * 60 * 24
         }
     })
     if (!res.ok) {
