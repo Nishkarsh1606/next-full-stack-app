@@ -8,7 +8,9 @@ type BlogPostProps = {
 
 const getIndividualPostData = async (uid: string) => {
     const res = await fetch(`http://localhost:3000/api/posts/${uid}`, {
-        cache: "no-store"
+        next: {
+            revalidate: 30 * 30 * 60,
+        }
     })
     if (!res.ok) {
         throw new Error('Failed to fetch data')

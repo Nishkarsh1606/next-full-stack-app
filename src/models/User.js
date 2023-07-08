@@ -1,4 +1,4 @@
-import { Schema } from "@mui/icons-material";
+import { Schema } from "mongoose";
 import mongoose from "mongoose";
 
 const userSchema = new Schema({
