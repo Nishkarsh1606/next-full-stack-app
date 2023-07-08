@@ -7,7 +7,7 @@ type BlogPostProps = {
 }
 
 const getIndividualPostData = async (uid: string) => {
-    const res = await fetch(`https://ultimate-next-full-stack-app.vercel.app/api/posts/${uid}`, {
+    const res = await fetch(`http://localhost:3000/api/posts/${uid}`, {
         next: {
             revalidate: 30 * 60 * 24,
         }
