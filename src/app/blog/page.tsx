@@ -10,7 +10,9 @@ export const metadata = {
 const getData = async () => {
     try {
         const res = await fetch(`http://localhost:3000/api/posts`, {
-            cache: 'no-cache'
+            next: {
+                revalidate: 60 * 60 * 24 * 30
+            }
         })
         if (!res.ok) {
             throw new Error('Failed to fetch data')
